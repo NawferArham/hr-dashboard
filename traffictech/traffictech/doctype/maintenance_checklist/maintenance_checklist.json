@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CHK-{####}",
+ "creation": "2025-03-13 17:44:24.833855",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "preventive_maintenance",
+  "inspection_improvement",
+  "project",
+  "column_break_svms",
+  "team",
+  "section_break_l5jv",
+  "main_activities",
+  "section_break_phul",
+  "sub_activities"
+ ],
+ "fields": [
+  {
+   "fieldname": "preventive_maintenance",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Preventive Maintenance",
+   "options": "Preventive Maintenance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_svms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_l5jv",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "section_break_phul",
+   "fieldtype": "Section Break",
+   "label": "Sub Activity"
+  },
+  {
+   "depends_on": "eval: frappe.session.user == \"Administrator\";",
+   "fieldname": "sub_activities",
+   "fieldtype": "Table",
+   "options": "Maintenance Checklist Template Sub Activity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "preventive_maintenance.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "preventive_maintenance.team",
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "label": "Team",
+   "options": "Team",
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_activities",
+   "fieldtype": "Table",
+   "options": "Maintenance Checklist Template Activity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspection_improvement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Inspection Improvement",
+   "options": "Inspection Improvement",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-24 11:32:38.945044",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Maintenance Checklist",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

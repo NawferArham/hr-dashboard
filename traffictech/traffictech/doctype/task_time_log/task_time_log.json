@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-24 15:31:24.592656",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "from_time",
+  "column_break_ejok",
+  "to_time",
+  "section_break_6nke",
+  "reason",
+  "time_taken"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Started\nPaused\nResumed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ejok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6nke",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "time_taken",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Time Taken"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "From"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "To"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-24 15:51:03.701487",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Task Time Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

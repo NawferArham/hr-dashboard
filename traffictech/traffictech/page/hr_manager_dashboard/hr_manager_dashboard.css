@@ -1,0 +1,103 @@
+.section-heading {
+	margin: 24px 0 12px;
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* adjust min width */
+	gap: 16px;
+}
+
+.attendance-section {
+	display: flex;
+}
+
+.attendance-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.stat-card {
+	padding: 16px;
+	/* background: #fff217;
+	border: 1px solid #fff217; */
+	border-radius: 6px;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.129);
+	transition: box-shadow 0.2s;
+	position: relative;
+	min-height: 100px;
+}
+
+.stat-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* .stat-content h4 { */
+	/* color: black; */
+/* } */
+
+.stat-icon-top-right {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	font-size: 1.5rem;
+	/* color: #00aeff; */
+	opacity: 0.8;
+}
+
+.stat-value {
+	font-size: 1.5rem;
+	margin: 4px 0;
+	font-weight: 600;
+}
+
+.stat-sub {
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+.chart-main-container {
+	/* background: #fff217; */
+	/* border: 1px solid #fff217; */
+	/* color: black; */
+
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.129);
+}
+
+.clickable-card:hover {
+	background: #f0f0f0;
+	cursor: pointer;
+}
+
+.total-salary {
+	width: 30%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.129);
+}
+
+.total-salary-card {
+	padding: 8px 12px;
+	border-radius: 8px;
+	width: 100%;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.129);
+	font-weight: bold;
+}
+
+/* presence-gender */
+
+.presence-gender {
+	display: flex;
+}
+
+.document-expiry-btn {
+	/* background: #fff217; */
+	/* border: 1px solid #fff217; */
+	padding: 8px 12px;
+	border-radius: 8px;
+	width: 20%;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.129);
+	font-weight: bold;
+}

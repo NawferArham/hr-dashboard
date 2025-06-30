@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:CMR-{posting_date}-{team}-{##}",
+ "creation": "2025-05-18 10:16:22.898814",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "team",
+  "fiscal_year",
+  "section_break_jiuz",
+  "incident_type",
+  "incident_category",
+  "month",
+  "asset_units_section",
+  "units",
+  "team_members_section",
+  "team_members",
+  "amended_from",
+  "cancel_reason"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Team",
+   "options": "Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_jiuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset_units_section",
+   "fieldtype": "Section Break",
+   "label": "Asset Units"
+  },
+  {
+   "fieldname": "units",
+   "fieldtype": "Table",
+   "options": "Schedule Cabinet Item"
+  },
+  {
+   "fieldname": "team_members_section",
+   "fieldtype": "Section Break",
+   "label": "Team Members"
+  },
+  {
+   "fieldname": "team_members",
+   "fieldtype": "Table",
+   "options": "Team Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Corrective Maintenance Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Link",
+   "label": "Incident Type",
+   "options": "Incident",
+   "reqd": 1
+  },
+  {
+   "depends_on": "incident_type",
+   "fieldname": "incident_category",
+   "fieldtype": "Link",
+   "label": "Incident Category",
+   "mandatory_depends_on": "incident_type",
+   "options": "Incident"
+  },
+  {
+   "fieldname": "cancel_reason",
+   "fieldtype": "Small Text",
+   "label": "Cancel Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Corrective Maintenance",
+   "link_fieldname": "cm_request"
+  },
+  {
+   "link_doctype": "Task",
+   "link_fieldname": "cm_request"
+  }
+ ],
+ "modified": "2025-05-26 15:48:24.635512",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Corrective Maintenance Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

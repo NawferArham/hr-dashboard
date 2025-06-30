@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-23 12:12:04.489938",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_c6r8",
+  "card_backgound_color",
+  "card_value_color",
+  "card_title_color",
+  "column_break_hqps",
+  "card_sub_heading",
+  "icon_color",
+  "chart_section",
+  "chart_backgound_color",
+  "chart_text_color"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_c6r8",
+   "fieldtype": "Section Break",
+   "label": "Cards"
+  },
+  {
+   "fieldname": "card_backgound_color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Backgound Color",
+   "reqd": 1
+  },
+  {
+   "fieldname": "card_title_color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Title Color",
+   "reqd": 1
+  },
+  {
+   "fieldname": "card_sub_heading",
+   "fieldtype": "Color",
+   "label": "Sub Heading",
+   "reqd": 1
+  },
+  {
+   "fieldname": "icon_color",
+   "fieldtype": "Color",
+   "label": "Icon Color",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hqps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chart_section",
+   "fieldtype": "Section Break",
+   "label": "Chart"
+  },
+  {
+   "fieldname": "chart_backgound_color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Backgound Color",
+   "reqd": 1
+  },
+  {
+   "fieldname": "chart_text_color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Text Color",
+   "reqd": 1
+  },
+  {
+   "fieldname": "card_value_color",
+   "fieldtype": "Color",
+   "label": "Value",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-06-23 13:52:54.533100",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Page Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

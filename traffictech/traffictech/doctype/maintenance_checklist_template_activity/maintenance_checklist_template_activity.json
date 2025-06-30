@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-13 17:49:49.027932",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity",
+  "column_break_rsmq",
+  "update",
+  "section_break_qo0m",
+  "template",
+  "divider",
+  "section_break_epk2",
+  "comments"
+ ],
+ "fields": [
+  {
+   "columns": 8,
+   "fieldname": "activity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Activity",
+   "options": "Maintenance Checklist Activity",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "update",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Update"
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "Maintenance Checklist Template"
+  },
+  {
+   "default": "0",
+   "fieldname": "divider",
+   "fieldtype": "Check",
+   "label": "Divider",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rsmq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_qo0m",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_epk2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "divider",
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-26 17:31:35.376203",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Maintenance Checklist Template Activity",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

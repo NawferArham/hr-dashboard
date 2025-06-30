@@ -1,0 +1,91 @@
+.employee-dashboard .row.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 24px;
+}
+.employee-dashboard .col {
+	flex: 1 1 30%;
+	min-width: 250px;
+}
+.card {
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	padding: 16px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    height: 100%;
+}
+.card h4 {
+	margin-top: 0;
+}
+
+.profile-card {
+	max-width: 100%;
+	padding: 20px;
+}
+
+.profile-card .profile-content {
+	display: flex;
+    flex-direction: row;
+	gap: 20px;
+	align-items: flex-start;
+}
+
+.profile-card .profile-left {
+	text-align: center;
+	flex: 0 0 160px; /* larger fixed width */
+}
+
+.profile-card .profile-image {
+	width: 150px; /* increased size */
+	height: 150px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	border: 2px solid #ccc;
+}
+
+.profile-card .btn {
+	margin-top: 8px;
+	width: 100%;
+}
+
+.profile-card .profile-details {
+	flex: 1;
+	min-width: 200px;
+    padding: 20px;
+
+}
+
+.profile-card .profile-details p {
+	margin: 4px 0;
+}
+.card-body {
+	padding: 1rem;
+}
+.list-group-item {
+	padding: 0.5rem 0.75rem;
+}
+
+/* ✅ Responsive on small screens */
+@media (max-width: 768px) {
+	.profile-card .profile-content {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.profile-card .profile-left,
+	.profile-card .profile-details {
+		flex: 1 1 100%;
+	}
+}
+
+
+.stat-icon-top-right {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	font-size: 1.5rem;
+	color: #000000;
+}

@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-06-24 11:08:31.588375",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-06-24 11:08:31.588375",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "employee-dashboard",
+ "owner": "Administrator",
+ "page_name": "employee-dashboard",
+ "roles": [
+  {
+   "role": "Employee"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Employee Dashboard"
+}

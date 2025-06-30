@@ -1,0 +1,16 @@
+{
+  "name": "traffictech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Indrajith vs <indrajith.vs2016@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "konva": "^9.3.20",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-easy-crop": "^5.4.1",
+    "react-konva": "^19.0.3",
+    "vite": "^6.2.0"
+  }
+}

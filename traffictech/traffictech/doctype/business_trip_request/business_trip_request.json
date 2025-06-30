@@ -1,0 +1,312 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BIS-TRP-{#####}",
+ "creation": "2025-02-18 17:01:32.032564",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_name",
+  "ttile",
+  "user_id",
+  "column_break_yarst",
+  "employee",
+  "department",
+  "column_break_sfjhp",
+  "destination",
+  "column_break_kfk0g",
+  "reasonpurpose",
+  "section_break_wpatw",
+  "from_date",
+  "column_break_na1go",
+  "to_date",
+  "section_break_6fqdd",
+  "departure_date",
+  "departure_time",
+  "column_break_eb4mo",
+  "arrival_date",
+  "arrival_time",
+  "section_break_cjokq",
+  "hotel_required",
+  "visa_required",
+  "column_break_af3n0",
+  "tickets_required",
+  "no_of_days",
+  "section_break_gik2l",
+  "hr_expenses",
+  "section_break_rlzjf",
+  "petty_cash_entry",
+  "column_break_w6cn",
+  "status_of_entry",
+  "section_break_jrop",
+  "employee_expenses",
+  "section_break_yndzx",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Business Trip Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_gik2l",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\") || frappe.user.has_role(\"HR Manager\");",
+   "fieldname": "hr_expenses",
+   "fieldtype": "Table",
+   "label": "HR Expenses",
+   "options": "Business HR Expense"
+  },
+  {
+   "fieldname": "section_break_rlzjf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_expenses",
+   "fieldtype": "Table",
+   "label": "Employee Expenses",
+   "options": "Business Employee Expense"
+  },
+  {
+   "fieldname": "section_break_yndzx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_sfjhp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\") || frappe.user.has_role(\"HR Manager\");",
+   "fetch_from": "employee.employee",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Requested By",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\") || frappe.user.has_role(\"HR Manager\");",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_yarst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\") || frappe.user.has_role(\"HR Manager\");",
+   "fetch_from": "employee.designation",
+   "fieldname": "ttile",
+   "fieldtype": "Data",
+   "label": "Ttile",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"HR User\") || frappe.user.has_role(\"HR Manager\");",
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination"
+  },
+  {
+   "fieldname": "reasonpurpose",
+   "fieldtype": "Small Text",
+   "label": "Reason/Purpose",
+   "max_height": "80px"
+  },
+  {
+   "default": "Today",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Event (From)"
+  },
+  {
+   "fieldname": "column_break_na1go",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "Date of Event (To)"
+  },
+  {
+   "fieldname": "section_break_6fqdd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "fieldname": "departure_time",
+   "fieldtype": "Data",
+   "label": "Departure Time"
+  },
+  {
+   "fieldname": "column_break_eb4mo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "arrival_time",
+   "fieldtype": "Data",
+   "label": "Arrival Time"
+  },
+  {
+   "fieldname": "section_break_cjokq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "hotel_required",
+   "fieldtype": "Check",
+   "label": "Hotel Required"
+  },
+  {
+   "default": "0",
+   "fieldname": "visa_required",
+   "fieldtype": "Check",
+   "label": "Visa Required"
+  },
+  {
+   "fieldname": "column_break_af3n0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_of_days",
+   "fieldtype": "Float",
+   "label": "No. of Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "tickets_required",
+   "fieldtype": "Check",
+   "label": "Tickets Required"
+  },
+  {
+   "fieldname": "section_break_wpatw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kfk0g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "User ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "petty_cash_entry",
+   "fieldtype": "Link",
+   "label": "Petty Cash Entry",
+   "options": "Petty Cash Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_w6cn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status_of_entry",
+   "fieldtype": "Select",
+   "label": "Status of Entry",
+   "options": "Pending\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jrop",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-11 12:55:15.543353",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Business Trip Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

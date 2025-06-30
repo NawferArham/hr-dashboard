@@ -1,0 +1,388 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CM-{schedule_cabinet}-{####}",
+ "creation": "2025-05-18 10:42:52.195063",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "cm_request",
+  "asset_unit",
+  "asset_name",
+  "asset_id",
+  "project",
+  "team",
+  "column_break_y3ds",
+  "date",
+  "status",
+  "incident_type",
+  "incident_category",
+  "replacement",
+  "time_log_section",
+  "start_time",
+  "end_time",
+  "column_break_pwgb",
+  "completed_date",
+  "total_time_taken",
+  "section_break_eebs",
+  "team_members",
+  "add_images_section",
+  "before_button",
+  "column_break_ngzm",
+  "during_button",
+  "column_break_lfl0",
+  "after_button",
+  "column_break_ufcg",
+  "additional_button",
+  "section_break_metv",
+  "before",
+  "section_break_lx1c",
+  "during",
+  "section_break_wm9w",
+  "after",
+  "section_break_uirg",
+  "additional_image",
+  "section_break_jflf",
+  "comments",
+  "signature_section",
+  "manager_name",
+  "manager_signature",
+  "section_break_o1ga",
+  "tasks",
+  "section_break_t9fz",
+  "amended_from",
+  "boq_tab",
+  "items",
+  "section_break_sdrz",
+  "total_qty",
+  "column_break_twym",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset Unit",
+   "options": "Asset Unit"
+  },
+  {
+   "fetch_from": "asset_unit.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "label": "Asset Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset_unit.asset_id",
+   "fieldname": "asset_id",
+   "fieldtype": "Data",
+   "label": "Asset ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset_unit.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Team",
+   "options": "Team"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start TIme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_y3ds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nWorking\nCompleted\nIn Review\nPaused\nApproved\nCancelled",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "replacement",
+   "fieldtype": "Check",
+   "label": "Replacement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End TIme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_date",
+   "fieldtype": "Date",
+   "label": "Completed Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_time_taken",
+   "fieldtype": "Float",
+   "label": "Total Time Taken (In Mins)",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_eebs",
+   "fieldtype": "Section Break",
+   "label": "Team Members"
+  },
+  {
+   "fieldname": "team_members",
+   "fieldtype": "Table",
+   "options": "Team Member"
+  },
+  {
+   "fieldname": "add_images_section",
+   "fieldtype": "Section Break",
+   "label": "Add Images"
+  },
+  {
+   "fieldname": "before_button",
+   "fieldtype": "Button",
+   "label": "Before"
+  },
+  {
+   "fieldname": "column_break_ngzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "during_button",
+   "fieldtype": "Button",
+   "label": "During"
+  },
+  {
+   "fieldname": "column_break_lfl0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "after_button",
+   "fieldtype": "Button",
+   "label": "After"
+  },
+  {
+   "fieldname": "column_break_ufcg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "additional_button",
+   "fieldtype": "Button",
+   "label": "Additional"
+  },
+  {
+   "fieldname": "section_break_metv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "before",
+   "fieldtype": "Table",
+   "label": "Before",
+   "options": "Preventive Maintenance Before"
+  },
+  {
+   "fieldname": "section_break_lx1c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "during",
+   "fieldtype": "Table",
+   "label": "During",
+   "options": "Preventive Maintenance During"
+  },
+  {
+   "fieldname": "section_break_wm9w",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "after",
+   "fieldtype": "Table",
+   "label": "After",
+   "options": "Preventive Maintenance After"
+  },
+  {
+   "fieldname": "section_break_uirg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "additional_image",
+   "fieldtype": "Table",
+   "label": "Additional Image",
+   "options": "Preventive Maintenance Additional"
+  },
+  {
+   "fieldname": "section_break_jflf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Table",
+   "label": "Comments",
+   "options": "Preventive Maintenance Comment"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "signature_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Signature"
+  },
+  {
+   "fieldname": "manager_name",
+   "fieldtype": "Data",
+   "label": "Manager Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_signature",
+   "fieldtype": "Signature",
+   "label": "Manager Signature"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_o1ga",
+   "fieldtype": "Section Break",
+   "label": "Tasks"
+  },
+  {
+   "fieldname": "tasks",
+   "fieldtype": "Table",
+   "options": "Preventive Maintenance Task",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_t9fz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Corrective Maintenance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cm_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "CM Request",
+   "options": "Corrective Maintenance Request",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "boq_tab",
+   "fieldtype": "Tab Break",
+   "label": "BOQ"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "options": "Inspection Improvement BOQ"
+  },
+  {
+   "fieldname": "section_break_sdrz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_twym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time_log_section",
+   "fieldtype": "Section Break",
+   "label": "Time Log"
+  },
+  {
+   "fieldname": "column_break_pwgb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Link",
+   "label": "Incident Type",
+   "options": "Incident",
+   "read_only": 1
+  },
+  {
+   "fieldname": "incident_category",
+   "fieldtype": "Link",
+   "label": "Incident Category",
+   "options": "Incident",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-21 16:06:40.226266",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Corrective Maintenance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

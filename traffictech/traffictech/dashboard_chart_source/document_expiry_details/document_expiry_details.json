@@ -1,0 +1,13 @@
+{
+ "creation": "2025-06-18 11:25:52.984208",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-06-18 11:25:52.984208",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Document Expiry Details",
+ "owner": "Administrator",
+ "source_name": "Document Expiry Details",
+ "timeseries": 0
+}

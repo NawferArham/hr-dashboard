@@ -1,0 +1,13 @@
+{
+ "creation": "2025-06-16 17:37:37.983795",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-06-16 17:37:37.983795",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Employee In Out",
+ "owner": "Administrator",
+ "source_name": "Employee In Out",
+ "timeseries": 0
+}

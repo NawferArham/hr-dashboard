@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-12 16:27:31.531459",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "description",
+  "internal_remarks",
+  "external_remarks",
+  "column_break_hj5z",
+  "unit",
+  "qty",
+  "list_price",
+  "logistic_percent",
+  "logistic_amount",
+  "total_cost",
+  "installation_cost",
+  "profit_percent",
+  "profit_amount",
+  "unit_price",
+  "section_break_htdl",
+  "rate",
+  "total",
+  "column_break_tsvf",
+  "group",
+  "table"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fetch_from": "item_code.description",
+   "fetch_if_empty": 1,
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_hj5z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.stock_uom",
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profit_amount",
+   "fieldtype": "Currency",
+   "label": "Profit Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profit_percent",
+   "fieldtype": "Currency",
+   "label": "Profit %"
+  },
+  {
+   "fieldname": "section_break_htdl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Data",
+   "label": "Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Data",
+   "label": "Table",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "list_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "List Price",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "logistic_percent",
+   "fieldtype": "Percent",
+   "label": "Logistic %"
+  },
+  {
+   "fieldname": "logistic_amount",
+   "fieldtype": "Currency",
+   "label": "Logistic Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tsvf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "installation_cost",
+   "fieldtype": "Currency",
+   "label": "Installation Cost",
+   "options": "currency"
+  },
+  {
+   "columns": 1,
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Unit Price",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "internal_remarks",
+   "fieldtype": "Small Text",
+   "label": "Internal Remarks"
+  },
+  {
+   "fieldname": "external_remarks",
+   "fieldtype": "Small Text",
+   "label": "External Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-21 11:52:20.769764",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Estimation Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

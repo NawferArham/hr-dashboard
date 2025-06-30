@@ -1,0 +1,13 @@
+{
+ "creation": "2025-06-17 13:03:48.462737",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-06-17 13:03:48.462737",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Department Wise Salary",
+ "owner": "Administrator",
+ "source_name": "Department Wise Salary",
+ "timeseries": 0
+}

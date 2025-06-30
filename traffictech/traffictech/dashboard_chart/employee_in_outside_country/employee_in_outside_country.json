@@ -1,0 +1,37 @@
+{
+ "based_on": "",
+ "chart_name": "Employee In Outside Country",
+ "chart_type": "Custom",
+ "creation": "2025-06-17 11:56:48.712372",
+ "currency": "",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 2,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2025-06-18 10:44:40.442117",
+ "modified": "2025-06-18 10:46:51.126941",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Employee In Outside Country",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "HR Manager"
+  }
+ ],
+ "source": "Employee In Outside Country",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "y_axis": []
+}

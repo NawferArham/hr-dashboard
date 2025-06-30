@@ -1,0 +1,237 @@
+{
+ "actions": [],
+ "autoname": "PCE-.YY.-.MM.-.####",
+ "creation": "2025-02-19 16:01:50.211924",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zvup",
+  "posting_date",
+  "project_based",
+  "project",
+  "currency",
+  "reason",
+  "column_break_blnt",
+  "status",
+  "conversion_rate",
+  "employee",
+  "employee_name",
+  "section_break_ozok",
+  "bills",
+  "total_section",
+  "grand_total",
+  "tax_and_charges",
+  "column_break_gels",
+  "discount_amount",
+  "section_break_xmgby",
+  "items",
+  "section_break_laod",
+  "rejection_reason",
+  "show_activity",
+  "column_break_rtig",
+  "amended_from",
+  "downloaded",
+  "section_break_rqh7",
+  "rejected_bills"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zvup",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "project_based",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_blnt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Exchange Rate",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ozok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"System Manager\");",
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Petty Cash Entry Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Petty Cash Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "bills",
+   "fieldtype": "Table",
+   "label": "Bills",
+   "options": "Petty Cash Entry Bill"
+  },
+  {
+   "fieldname": "section_break_xmgby",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nPartial Approved\nApproved\nRejected\nResubmitted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rtig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_section",
+   "fieldtype": "Section Break",
+   "label": "Total"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_and_charges",
+   "fieldtype": "Currency",
+   "label": "Tax and Charges",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gels",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "project_based",
+   "fieldtype": "Check",
+   "label": "Project Based?"
+  },
+  {
+   "default": "0",
+   "fieldname": "downloaded",
+   "fieldtype": "Check",
+   "label": "Downloaded",
+   "read_only": 1
+  },
+  {
+   "fieldname": "show_activity",
+   "fieldtype": "Button",
+   "label": "Show Activity"
+  },
+  {
+   "fieldname": "section_break_laod",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_rqh7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: frappe.user.has_role(\"System Manager\");",
+   "fieldname": "rejected_bills",
+   "fieldtype": "Table",
+   "label": "Rejected Bills",
+   "options": "Petty Cash Entry Rejected Bills",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-05 15:41:52.170709",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Petty Cash Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

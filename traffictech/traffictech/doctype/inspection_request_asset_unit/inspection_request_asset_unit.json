@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-24 10:53:14.376704",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_unit",
+  "asset_id",
+  "asset_name",
+  "column_break_fcvc",
+  "id",
+  "project",
+  "type_of_work",
+  "section_break_vnzh",
+  "description_of_inspection_works"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Asset Unit",
+   "options": "Asset Unit",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "asset_unit.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_fcvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "asset_unit.id",
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset_unit.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset_unit.asset_id",
+   "fieldname": "asset_id",
+   "fieldtype": "Data",
+   "label": "Asset ID"
+  },
+  {
+   "fieldname": "type_of_work",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Work",
+   "options": "RFI Inspection Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_vnzh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description_of_inspection_works",
+   "fieldtype": "Text Editor",
+   "label": "Description of Inspection Works"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-05 12:41:53.131528",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Inspection Request Asset Unit",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

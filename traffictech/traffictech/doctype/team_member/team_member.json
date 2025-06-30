@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-11 17:46:14.848088",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "member_name",
+  "user_id",
+  "engineer_in_charge"
+ ],
+ "fields": [
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.user_id",
+   "fieldname": "user_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "User ID",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.employee_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "engineer_in_charge",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Engineer In Charge"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-17 14:29:41.265524",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Team Member",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

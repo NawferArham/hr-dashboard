@@ -1,0 +1,13 @@
+[pre_model_sync]
+# Patches added in this section will be executed before doctypes are migrated
+# Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
+
+traffictech.patches.create_custom_fields #09-05
+traffictech.patches.create_property_setter #rerun 05-06
+traffictech.patches.create_task_fields #re run 20-05
+traffictech.patches.create_project_fields
+traffictech.patches.create_crm_fields #rerun
+traffictech.patches.create_quote_fields #rerun 21-05
+
+[post_model_sync]
+# Patches added in this section will be executed after doctypes are migrated

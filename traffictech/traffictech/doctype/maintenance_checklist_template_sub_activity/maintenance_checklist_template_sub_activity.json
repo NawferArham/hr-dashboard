@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-13 17:50:35.896670",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity",
+  "clean",
+  "check",
+  "column_break_ryro",
+  "lubricate",
+  "replace",
+  "column_break_lsfo",
+  "expired",
+  "as_per_diagram",
+  "section_break_hbcg",
+  "comments",
+  "parent_activity"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Activity",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "clean",
+   "fieldtype": "Check",
+   "label": "Clean"
+  },
+  {
+   "default": "0",
+   "fieldname": "check",
+   "fieldtype": "Check",
+   "label": "Check"
+  },
+  {
+   "fieldname": "column_break_ryro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lubricate",
+   "fieldtype": "Check",
+   "label": "Lubricate"
+  },
+  {
+   "default": "0",
+   "fieldname": "replace",
+   "fieldtype": "Check",
+   "label": "Replace"
+  },
+  {
+   "fieldname": "column_break_lsfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "expired",
+   "fieldtype": "Check",
+   "label": "Expired"
+  },
+  {
+   "default": "0",
+   "fieldname": "as_per_diagram",
+   "fieldtype": "Check",
+   "label": "As Per Diagram"
+  },
+  {
+   "fieldname": "section_break_hbcg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "parent_activity",
+   "fieldtype": "Data",
+   "label": "Parent Activity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-13 18:34:59.926753",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Maintenance Checklist Template Sub Activity",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

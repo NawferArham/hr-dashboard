@@ -1,0 +1,45 @@
+<!-- HTML File (index.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Manager Dashboard</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1 class="dashboard-title">HR Manager Dashboard</h1>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="tab1">Employee Summary & Attendance</button>
+      <button class="tab-button" data-tab="tab2">Leave Statistics</button>
+      <button class="tab-button" data-tab="tab3">Monthly Activities</button>
+    </div>
+    <div class="tab-content active" id="tab1">
+      <div class="card">Employee Summary</div>
+      <div class="card">Attendance</div>
+    </div>
+    <div class="tab-content" id="tab2">
+      <div class="card">Leave Statistics</div>
+    </div>
+    <div class="tab-content" id="tab3">
+      <div class="card">Monthly Activities</div>
+    </div>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

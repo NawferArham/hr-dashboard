@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-12 17:22:45.413082",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_5pel",
+  "amended_from",
+  "employee_code",
+  "employee_name",
+  "department",
+  "column_break_qebz",
+  "designation",
+  "joining_date",
+  "application_date",
+  "section_break_sifp",
+  "leave_type",
+  "plsspecify",
+  "total_no_of_days",
+  "replacement_required",
+  "name_eof_replacement",
+  "column_break_wfgc",
+  "leave_start_date",
+  "leave_end_date",
+  "travelling_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_5pel",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Application Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "label": "Employee Code",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_code.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fetch_from": "employee_code.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_qebz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_code.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "employee_code.date_of_joining",
+   "fieldname": "joining_date",
+   "fieldtype": "Data",
+   "label": "Joining Date"
+  },
+  {
+   "default": "Today",
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "label": "Application Date"
+  },
+  {
+   "fieldname": "section_break_sifp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Select",
+   "label": "Leave Type",
+   "options": "\nAnnual Paid Leave\nLeave Converted To Cash\nMedical Leave\nLeave W/O Pay\nEmergency Leave\nOther"
+  },
+  {
+   "depends_on": "eval:doc.leave_type == 'Other'",
+   "fieldname": "plsspecify",
+   "fieldtype": "Data",
+   "label": "Pls.Specify"
+  },
+  {
+   "fieldname": "total_no_of_days",
+   "fieldtype": "Float",
+   "label": "Total No Of Days"
+  },
+  {
+   "fieldname": "replacement_required",
+   "fieldtype": "Select",
+   "label": "Replacement Required",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.replacement_required == 'Yes'",
+   "fieldname": "name_eof_replacement",
+   "fieldtype": "Data",
+   "label": "Name eOf Replacement"
+  },
+  {
+   "fieldname": "column_break_wfgc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_start_date",
+   "fieldtype": "Date",
+   "label": "Leave Start Date"
+  },
+  {
+   "fieldname": "leave_end_date",
+   "fieldtype": "Date",
+   "label": "Leave End Date"
+  },
+  {
+   "fieldname": "travelling_date",
+   "fieldtype": "Date",
+   "label": "Travelling Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-12 17:34:22.951486",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Leave Application Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

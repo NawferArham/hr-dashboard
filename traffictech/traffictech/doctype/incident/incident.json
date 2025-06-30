@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:incident_name",
+ "creation": "2025-05-18 10:22:17.349843",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_name",
+  "incident_type",
+  "column_break_xcbh",
+  "is_group"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval: !doc.is_group;",
+   "fieldname": "incident_type",
+   "fieldtype": "Link",
+   "label": "Parent Incident Type",
+   "mandatory_depends_on": "eval: !doc.is_group;",
+   "options": "Incident"
+  },
+  {
+   "fieldname": "column_break_xcbh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "incident_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-18 10:31:10.585462",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Incident",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

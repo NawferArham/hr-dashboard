@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-27 21:02:35.708739",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "api_key",
+  "live_detection",
+  "enable_pdf_download"
+ ],
+ "fields": [
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Password",
+   "label": "API KEY",
+   "length": 1500
+  },
+  {
+   "default": "0",
+   "description": "Live Detection Scanner for Petty Cash Entry",
+   "fieldname": "live_detection",
+   "fieldtype": "Check",
+   "label": "Live Detection"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_pdf_download",
+   "fieldtype": "Check",
+   "label": "Enable PDF Download"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-04-19 23:37:35.796852",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "OCR Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

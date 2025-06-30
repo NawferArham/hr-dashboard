@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-24 22:58:14.508768",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "point",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "point",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Point"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-24 23:34:51.240991",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "FSM Report Comment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

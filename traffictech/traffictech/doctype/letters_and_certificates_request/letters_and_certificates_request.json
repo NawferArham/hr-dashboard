@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-12 16:44:50.461349",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gmxk",
+  "amended_from",
+  "employee_code",
+  "employee_name",
+  "column_break_spec",
+  "department",
+  "designation",
+  "certificate_details_section",
+  "te",
+  "certificateletter",
+  "purpose",
+  "special_note",
+  "column_break_oqel",
+  "noc",
+  "updated_contract_required",
+  "name_of_persons_to_be_sponsored",
+  "relationship",
+  "section_break_xabw",
+  "purpose_letter",
+  "plsspecify",
+  "bank",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gmxk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Letters and Certificates Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "label": "Employee Code",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_code.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_spec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_code.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fetch_from": "employee_code.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "special_note",
+   "fieldtype": "Data",
+   "label": "Special Note"
+  },
+  {
+   "fieldname": "section_break_xabw",
+   "fieldtype": "Section Break",
+   "label": "Standard Letter"
+  },
+  {
+   "fieldname": "updated_contract_required",
+   "fieldtype": "Select",
+   "label": "Updated Contract Required",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "certificate_details_section",
+   "fieldtype": "Section Break",
+   "label": "Certificate Details"
+  },
+  {
+   "fieldname": "relationship",
+   "fieldtype": "Small Text",
+   "label": "Relationship"
+  },
+  {
+   "fieldname": "te",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_oqel",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_of_persons_to_be_sponsored",
+   "fieldtype": "Small Text",
+   "label": "Name Of Person(s) To Be Sponsored"
+  },
+  {
+   "fieldname": "purpose_letter",
+   "fieldtype": "Select",
+   "label": "Purpose",
+   "options": "\nAccount Opening\nSalary Transfer\nCredit Card Application\nCredit Card Top Up\nOther"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Data",
+   "label": "Bank"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "certificateletter",
+   "fieldtype": "Select",
+   "label": "Certificate/Letter",
+   "options": "\nSalary Certificate\nEmployment Certificate\nLetter to Embassy\nOther"
+  },
+  {
+   "fieldname": "noc",
+   "fieldtype": "Select",
+   "label": "NOC",
+   "options": "\nNOC For Family RP\nNOC For Family Visit\nNOC For RP Transfer\nOther"
+  },
+  {
+   "depends_on": "eval:doc.purpose_letter == 'Other'",
+   "fieldname": "plsspecify",
+   "fieldtype": "Data",
+   "label": "Pls.Specify"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-12 17:16:38.032734",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Letters and Certificates Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

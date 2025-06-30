@@ -1,0 +1,13 @@
+{
+ "creation": "2025-06-17 13:23:10.443375",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart Source",
+ "idx": 0,
+ "modified": "2025-06-17 13:23:10.443375",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Vacation Return",
+ "owner": "Administrator",
+ "source_name": "Vacation Return",
+ "timeseries": 0
+}

@@ -1,0 +1,336 @@
+{
+ "actions": [],
+ "autoname": "EXP-.YY.-.MM.-.####",
+ "creation": "2025-01-25 21:48:03.623352",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zvup",
+  "employee",
+  "employee_name",
+  "file",
+  "currency",
+  "conversion_rate",
+  "column_break_blnt",
+  "company",
+  "category",
+  "applying_for_another_employee",
+  "sub_employee",
+  "sub_employee_name",
+  "column_break_lprc",
+  "supplier",
+  "supplier_invoice_no",
+  "supplier_invoice_date",
+  "project",
+  "amended_from",
+  "section_break_ozok",
+  "items",
+  "section_break_llzu",
+  "total_qty",
+  "column_break_djww",
+  "base_total",
+  "base_net_total",
+  "column_break_ofiy",
+  "total",
+  "net_total",
+  "section_break_rkfm",
+  "base_discount_amount",
+  "column_break_vycn",
+  "discount_amount",
+  "section_break_rcoz",
+  "base_tax_and_charges",
+  "column_break_jaqb",
+  "tax_and_charges",
+  "section_break_wcck",
+  "base_grand_total",
+  "column_break_gfki",
+  "grand_total",
+  "tab_2_tab",
+  "json_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zvup",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Expense Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "File"
+  },
+  {
+   "fieldname": "column_break_blnt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier"
+  },
+  {
+   "fieldname": "supplier_invoice_no",
+   "fieldtype": "Data",
+   "label": "Supplier Invoice No"
+  },
+  {
+   "fieldname": "supplier_invoice_date",
+   "fieldtype": "Date",
+   "label": "Supplier Invoice Date"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ozok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Expense Entry Log"
+  },
+  {
+   "fieldname": "section_break_llzu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "no_copy": 1,
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Integration",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "json_data",
+   "fieldtype": "Code",
+   "label": "JSON DATA",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_djww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "base_net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total (Company Currency)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ofiy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "no_copy": 1,
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wcck",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "base_grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total (Company Currency)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gfki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rcoz",
+   "fieldtype": "Section Break",
+   "label": "Tax and Charges"
+  },
+  {
+   "fieldname": "base_tax_and_charges",
+   "fieldtype": "Currency",
+   "label": "Tax and Charges (Company Currency)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jaqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_and_charges",
+   "fieldtype": "Currency",
+   "label": "Tax and Charges"
+  },
+  {
+   "fieldname": "section_break_rkfm",
+   "fieldtype": "Section Break",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "base_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount (Company Currency)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vycn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "no_copy": 1,
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_total",
+   "fieldtype": "Currency",
+   "label": "Total (Company Currency)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": "9"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Expense Category"
+  },
+  {
+   "default": "0",
+   "fieldname": "applying_for_another_employee",
+   "fieldtype": "Check",
+   "label": "Applying For Another Employee"
+  },
+  {
+   "depends_on": "applying_for_another_employee",
+   "fieldname": "sub_employee",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Sub Employee",
+   "mandatory_depends_on": "applying_for_another_employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "sub_employee.employee_name",
+   "fieldname": "sub_employee_name",
+   "fieldtype": "Data",
+   "label": "Sub Employee Name",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lprc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-18 17:18:08.850988",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Expense Entry",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

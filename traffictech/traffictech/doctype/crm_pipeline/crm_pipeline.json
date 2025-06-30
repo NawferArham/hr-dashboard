@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:opportunity_type",
+ "creation": "2025-05-08 16:33:31.626463",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "opportunity_type",
+  "section_break_ktmu",
+  "opportunity_stage"
+ ],
+ "fields": [
+  {
+   "fieldname": "opportunity_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Opportunity Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_ktmu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "opportunity_stage",
+   "fieldtype": "Table",
+   "label": "Opportunity Stage",
+   "options": "Pipeline Opportunity Stage",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-08 17:13:17.452854",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "CRM Pipeline",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

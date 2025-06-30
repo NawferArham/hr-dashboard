@@ -1,0 +1,488 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project}-RFI-{####}",
+ "creation": "2025-04-22 17:28:20.187243",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ins_imp_request",
+  "asset_unit",
+  "project",
+  "asset_id",
+  "junction_no",
+  "team",
+  "start_time",
+  "column_break_y3ds",
+  "date",
+  "status",
+  "type_of_work",
+  "replacement",
+  "end_time",
+  "completed_date",
+  "total_time_taken",
+  "section_break_eebs",
+  "team_members",
+  "add_images_section",
+  "before_button",
+  "column_break_ngzm",
+  "during_button",
+  "column_break_lfl0",
+  "after_button",
+  "column_break_ufcg",
+  "additional_button",
+  "section_break_metv",
+  "before",
+  "section_break_lx1c",
+  "during",
+  "section_break_wm9w",
+  "after",
+  "section_break_uirg",
+  "additional_image",
+  "section_break_o1ga",
+  "tasks",
+  "section_break_t9fz",
+  "amended_from",
+  "boq_tab",
+  "boq_items",
+  "section_break_mwem",
+  "total_qty",
+  "column_break_tmak",
+  "total_amount",
+  "inspection_details_tab",
+  "description",
+  "reference_documents_section",
+  "document_template",
+  "documents",
+  "attachments_section",
+  "shop_drawing_",
+  "test_reports_",
+  "photo_evidence_",
+  "column_break_wvn9",
+  "boq_with_approved_item_ref_no_",
+  "others_",
+  "inspection_feedback_section",
+  "no_objection",
+  "revise_and_resubmit",
+  "column_break_jggj",
+  "no_objection_with_comments",
+  "rejected",
+  "activities_tab",
+  "activity_one",
+  "section_break_bldn",
+  "activity_two"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset Unit",
+   "options": "Asset Unit",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "asset_unit.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "team",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Team",
+   "options": "Team"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start TIme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_y3ds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nWorking\nWork Completed\nIn Review\nPaused\nApproved\nCancelled",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "replacement",
+   "fieldtype": "Check",
+   "label": "Replacement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End TIme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_date",
+   "fieldtype": "Date",
+   "label": "Completed Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_time_taken",
+   "fieldtype": "Float",
+   "label": "Total Time Taken (In Mins)",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_eebs",
+   "fieldtype": "Section Break",
+   "label": "Team Members"
+  },
+  {
+   "fieldname": "team_members",
+   "fieldtype": "Table",
+   "options": "Team Member",
+   "read_only": 1
+  },
+  {
+   "fieldname": "add_images_section",
+   "fieldtype": "Section Break",
+   "label": "Add Images"
+  },
+  {
+   "fieldname": "before_button",
+   "fieldtype": "Button",
+   "label": "Before"
+  },
+  {
+   "fieldname": "column_break_ngzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "during_button",
+   "fieldtype": "Button",
+   "label": "During"
+  },
+  {
+   "fieldname": "column_break_lfl0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "after_button",
+   "fieldtype": "Button",
+   "label": "After"
+  },
+  {
+   "fieldname": "column_break_ufcg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "additional_button",
+   "fieldtype": "Button",
+   "label": "Additional"
+  },
+  {
+   "fieldname": "section_break_metv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "before",
+   "fieldtype": "Table",
+   "label": "Before",
+   "options": "Preventive Maintenance Before"
+  },
+  {
+   "fieldname": "section_break_lx1c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "during",
+   "fieldtype": "Table",
+   "label": "During",
+   "options": "Preventive Maintenance During"
+  },
+  {
+   "fieldname": "section_break_wm9w",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "after",
+   "fieldtype": "Table",
+   "label": "After",
+   "options": "Preventive Maintenance After"
+  },
+  {
+   "fieldname": "section_break_uirg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "additional_image",
+   "fieldtype": "Table",
+   "label": "Additional Image",
+   "options": "Preventive Maintenance Additional"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_o1ga",
+   "fieldtype": "Section Break",
+   "label": "Tasks"
+  },
+  {
+   "fieldname": "tasks",
+   "fieldtype": "Table",
+   "options": "Preventive Maintenance Task",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_t9fz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Preventive Maintenance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "ins_imp_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ins/Imp Request",
+   "options": "Inspection Improvement Request",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "boq_tab",
+   "fieldtype": "Tab Break",
+   "label": "BOQ"
+  },
+  {
+   "fieldname": "boq_items",
+   "fieldtype": "Table",
+   "options": "Inspection Improvement BOQ"
+  },
+  {
+   "fieldname": "section_break_mwem",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tmak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "inspection_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Inspection Details"
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "column_break_wvn9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inspection_feedback_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Inspection Feedback"
+  },
+  {
+   "default": "0",
+   "fieldname": "rejected",
+   "fieldtype": "Check",
+   "label": "Rejected"
+  },
+  {
+   "default": "0",
+   "fieldname": "revise_and_resubmit",
+   "fieldtype": "Check",
+   "label": "Revise and Resubmit"
+  },
+  {
+   "fieldname": "column_break_jggj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_objection_with_comments",
+   "fieldtype": "Check",
+   "label": "No Objection with Comments"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_objection",
+   "fieldtype": "Check",
+   "label": "No Objection"
+  },
+  {
+   "fetch_from": "asset_unit.asset_id",
+   "fieldname": "asset_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset ID",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset_unit.junction_no",
+   "fieldname": "junction_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Junction No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_of_work",
+   "fieldtype": "Data",
+   "label": "Type of Work",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "reference_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Documents"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Inspection Improvement Documents"
+  },
+  {
+   "fieldname": "activities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "activity_one",
+   "fieldtype": "Table",
+   "label": "Site Activity",
+   "options": "Inspection Improvement Activity"
+  },
+  {
+   "fieldname": "section_break_bldn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "activity_two",
+   "fieldtype": "Table",
+   "label": "Health Safety and Environment",
+   "options": "Inspection Improvement Activity"
+  },
+  {
+   "fieldname": "document_template",
+   "fieldtype": "Link",
+   "label": "Document Template",
+   "options": "Inspection Improvement Document Template"
+  },
+  {
+   "default": "0",
+   "fieldname": "shop_drawing_",
+   "fieldtype": "Check",
+   "label": "Shop Drawing"
+  },
+  {
+   "default": "0",
+   "fieldname": "test_reports_",
+   "fieldtype": "Check",
+   "label": "Test Reports"
+  },
+  {
+   "default": "0",
+   "fieldname": "photo_evidence_",
+   "fieldtype": "Check",
+   "label": "Photo Evidence"
+  },
+  {
+   "default": "0",
+   "fieldname": "boq_with_approved_item_ref_no_",
+   "fieldtype": "Check",
+   "label": "BOQ with Approved Item Ref No."
+  },
+  {
+   "default": "0",
+   "fieldname": "others_",
+   "fieldtype": "Check",
+   "label": "Others"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Maintenance Checklist",
+   "link_fieldname": "inspection_improvement"
+  }
+ ],
+ "modified": "2025-05-27 17:31:08.179291",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Inspection Improvement",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

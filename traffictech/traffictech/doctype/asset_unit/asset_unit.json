@@ -1,0 +1,231 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:id",
+ "creation": "2025-03-11 17:28:32.003807",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_type",
+  "asset_name",
+  "project",
+  "structure",
+  "ip_address",
+  "warranty_date",
+  "manufacturer",
+  "column_break_ahx9",
+  "id",
+  "asset_id",
+  "asset_tag",
+  "junction_no",
+  "location_id",
+  "serial_no",
+  "image",
+  "credential_section",
+  "username",
+  "column_break_nw6s",
+  "password",
+  "section_break_ofmu",
+  "templates",
+  "column_break_hfow",
+  "cordinates_section",
+  "x_coordinate",
+  "y_coordinate",
+  "column_break_kstg",
+  "longitude",
+  "latitude",
+  "section_break_3dp2",
+  "location"
+ ],
+ "fields": [
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ahx9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "cordinates_section",
+   "fieldtype": "Section Break",
+   "label": "Coordinates"
+  },
+  {
+   "fieldname": "column_break_kstg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.asset_type == \"Cabinet\";",
+   "fieldname": "junction_no",
+   "fieldtype": "Data",
+   "label": "Junction No"
+  },
+  {
+   "fieldname": "section_break_3dp2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "HTML",
+   "label": "Location"
+  },
+  {
+   "fieldname": "asset_type",
+   "fieldtype": "Link",
+   "label": "Asset Type",
+   "options": "Asset Unit Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ofmu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Asset Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude",
+   "read_only": 1
+  },
+  {
+   "fieldname": "x_coordinate",
+   "fieldtype": "Data",
+   "label": "X"
+  },
+  {
+   "fieldname": "y_coordinate",
+   "fieldtype": "Data",
+   "label": "Y"
+  },
+  {
+   "fieldname": "templates",
+   "fieldtype": "Table",
+   "label": "Checklist Templates",
+   "options": "Asset Unit Checklist Template",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hfow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset_id",
+   "fieldtype": "Data",
+   "label": "Asset ID"
+  },
+  {
+   "fieldname": "asset_tag",
+   "fieldtype": "Data",
+   "label": "Asset Tag"
+  },
+  {
+   "fieldname": "structure",
+   "fieldtype": "Data",
+   "label": "Structure"
+  },
+  {
+   "depends_on": "eval: doc.asset_type == \"Camera\";",
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "depends_on": "eval: doc.asset_type == \"Camera\";",
+   "fieldname": "warranty_date",
+   "fieldtype": "Date",
+   "label": "Warranty Date"
+  },
+  {
+   "depends_on": "eval: doc.asset_type == \"Camera\";",
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "credential_section",
+   "fieldtype": "Section Break",
+   "label": "Credential"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "column_break_nw6s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "label": "Password"
+  },
+  {
+   "fieldname": "location_id",
+   "fieldtype": "Data",
+   "label": "Location ID"
+  },
+  {
+   "depends_on": "eval: doc.asset_type == \"Camera\";",
+   "fieldname": "serial_no",
+   "fieldtype": "Data",
+   "label": "Serial No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-21 14:55:16.185712",
+ "modified_by": "Administrator",
+ "module": "Traffictech",
+ "name": "Asset Unit",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "asset_name,asset_id,junction_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
