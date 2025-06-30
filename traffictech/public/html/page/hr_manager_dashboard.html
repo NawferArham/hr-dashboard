@@ -1,45 +1,191 @@
-<!-- HTML File (index.html) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR Manager Dashboard</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="dashboard.css">
-</head>
-<body>
-  <div class="dashboard-container">
-    <h1 class="dashboard-title">HR Manager Dashboard</h1>
-    <div class="tabs">
-      <button class="tab-button active" data-tab="tab1">Employee Summary & Attendance</button>
-      <button class="tab-button" data-tab="tab2">Leave Statistics</button>
-      <button class="tab-button" data-tab="tab3">Monthly Activities</button>
+<header>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</header>
+
+<div class="dashboard-wrapper">
+
+  <!-- Tab Navigation -->
+  <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#summary-attendance">Summary & Attendance</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#salary">Salary</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#presence-gender">Presence & Gender</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#designation-nationality">Designation & Nationality</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#documents">Documents</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#payroll">Payroll</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#recruitment">Recruitment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#expenses">Expenses</a>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content pt-3">
+
+    <!-- Summary & Attendance -->
+    <div class="tab-pane fade show active" id="summary-attendance">
+      <div class="section-heading">Employee Summary</div>
+      <hr>
+      <div class="cards-grid">
+        <div id="total-employees"></div>
+        <div id="new-hires"></div>
+        <div id="exits"></div>
+        <div id="joining"></div>
+        <div id="relieving"></div>
+      </div>
+
+      <div class="section-heading">Attendance</div>
+      <hr>
+      <div class="attendance-section d-flex">
+        <div class="attendance-grid cards-grid me-2" style="width:50%;">
+          <div id="office-staff"></div>
+          <div id="site-staff"></div>
+        </div>
+        <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
+      </div>
     </div>
-    <div class="tab-content active" id="tab1">
-      <div class="card">Employee Summary</div>
-      <div class="card">Attendance</div>
+
+    <!-- Salary -->
+    <div class="tab-pane fade" id="salary">
+      <div class="section-heading">Salary Details</div>
+      <hr>
+      <div class="salary-details">
+        <div class="total-salary" id="total-salary"></div>
+        <canvas class="chart-main-container" id="department-wise-salary-chart" style="margin-top: 8px;"></canvas>
+      </div>
     </div>
-    <div class="tab-content" id="tab2">
-      <div class="card">Leave Statistics</div>
+
+    <!-- Presence & Gender -->
+    <div class="tab-pane fade" id="presence-gender">
+      <div class="presence-gender d-flex">
+        <div style="width: 50%; margin-right:16px;">
+          <div class="section-heading">Presence</div>
+          <hr>
+          <div class="chart-main-container" id="outside-country-chart"></div>
+        </div>
+        <div style="width: 50%;">
+          <div class="section-heading">Gender</div>
+          <hr>
+          <div class="chart-main-container" id="gender-ratio-chart"></div>
+        </div>
+      </div>
     </div>
-    <div class="tab-content" id="tab3">
-      <div class="card">Monthly Activities</div>
+
+    <!-- Designation & Nationality -->
+    <div class="tab-pane fade" id="designation-nationality">
+      <div class="section-heading">Designation</div>
+      <hr>
+      <div class="chart-main-container" id="designation-chart"></div>
+
+      <div class="section-heading mt-4">Nationality</div>
+      <hr>
+      <div class="chart-main-container" id="nationality-chart"></div>
     </div>
+
+    <!-- Document Expiry -->
+    <div class="tab-pane fade" id="documents">
+      <div class="document-expiry mt-2">
+        <div class="section-heading">Document Expiry Details</div>
+        <hr>
+        <div class="cards-grid">
+          <div class="document-expiry-btn">
+            <a href="/app/query-report/Document%20Expiry%20Details">Open Report</a>
+          </div>
+        </div>
+        <div class="chart-main-container w-100 mt-2" id="document-expiry-details"></div>
+      </div>
+    </div>
+
+    <!-- Payroll -->
+    <div class="tab-pane fade" id="payroll">
+      <div class="attendance mt-2">
+        <div class="section-heading">Attendance</div>
+        <hr>
+        <div class="cards-grid">
+          <div id="total-present"></div>
+          <div id="total-absent"></div>
+          <div id="late-entry"></div>
+          <div id="early-exit"></div>
+        </div>
+        <div class="chart-main-container w-100 mt-2" id="attendance-count"></div>
+      </div>
+
+      <div class="payroll mt-2">
+        <div class="section-heading">Payroll</div>
+        <hr>
+        <div class="cards-grid">
+          <div id="total-declaration"></div>
+          <div id="total-salary-structure"></div>
+          <div id="total-incentive"></div>
+          <div id="total-outgoing"></div>
+        </div>
+        <div class="chart-main-container w-100 mt-2" id="monthly-salary-chart"></div>
+      </div>
+    </div>
+
+    <!-- Recruitment -->
+    <div class="tab-pane fade" id="recruitment">
+      <div class="recruitement">
+        <div class="section-heading">Recruitment</div>
+        <hr>
+        <div class="cards-grid">
+          <div id="job-openings"></div>
+          <div id="total-applicants"></div>
+          <div id="accepted-job-applicants"></div>
+          <div id="rejected-job-applicants"></div>
+        </div>
+        <div class="cards-grid mt-2">
+          <div id="joboffers"></div>
+          <div id="applicantto-hire-percent"></div>
+          <div id="joboffer-acceptence-rate"></div>
+          <div id="time-to-fill"></div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div class="chart-main-container w-50 me-4" id="job-applicant-pipeline"></div>
+          <div class="chart-main-container w-50" id="job-applicant-source"></div>
+        </div>
+
+        <div class="d-flex mt-2">
+          <div class="chart-main-container w-50 me-4" id="job-applicantby-country"></div>
+          <div class="chart-main-container w-50" id="job-applicant-status"></div>
+        </div>
+
+        <div class="chart-main-container w-100 mt-2" id="job-applicant-frequency"></div>
+
+        <div class="d-flex mt-2">
+          <div class="chart-main-container w-50 me-4" id="designation-wise-opening"></div>
+          <div class="chart-main-container w-50" id="department-wise-opening"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expenses -->
+    <div class="tab-pane fade" id="expenses">
+      <div class="expenses mt-2">
+        <div class="section-heading">Expense Claims</div>
+        <hr>
+        <div class="cards-grid">
+          <div id="expense-claims"></div>
+          <div id="approved-claims"></div>
+          <div id="rejected-claims"></div>
+        </div>
+        <div class="chart-main-container w-100 mt-2" id="departmentwise-claims-chart"></div>
+      </div>
+    </div>
+
   </div>
-
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabButtons.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
+</div>
