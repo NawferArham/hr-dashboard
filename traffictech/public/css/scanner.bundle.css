@@ -1,119 +1,107 @@
-/* Reset some base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.dialog_container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	overflow: auto;  /* Ensures content inside does not overflow */
+	max-height: 70vh; /* Prevents the dialog from growing too large */
 }
 
-body {
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+.image-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* overflow-y: auto; */
+	max-height: 500px; /* Prevents images from overflowing */
+	margin-left: 15px;
 }
 
-header {
-  background-color: #ffd700; /* Yellow */
-  padding: 1rem 2rem;
-  text-align: center;
-  color: #000;
-  font-size: 1.5rem;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* .captured-images {
+	border: 1px solid black;
+	box-shadow: grey;
+} */
+
+.image-section img {
+	width: 180px;
+	height: 250px;
 }
 
-nav {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+button {
+	border-radius: 8px;
+	padding: 4px;
+	font-size: 10px;
+	font-family: inherit;
+	background-color: #000000;
+	cursor: pointer;
+	transition: border-color 0.25s;
+	color: white
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 500;
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* .camera-section { */
+	/* width: 20% */
+/* } */
+
+.image-section {
+	width: 80%
 }
 
-.container {
-  padding: 2rem;
+.image-section .rmv-button {
+	background-color: red;
 }
 
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #fff;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.cpt-button {
+	font-size: 10px;
+	background-color: #000000;
+	color: white;
 }
 
-.tab-button {
-  flex: 1;
-  padding: 1rem;
-  text-align: center;
-  cursor: pointer;
-  background-color: #eee;
-  border: none;
-  font-weight: 600;
-  transition: background 0.3s;
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
 }
 
-.tab-button.active {
-  background-color: #ffd700; /* Yellow */
-  color: #000;
-}
-
-.tab-content {
-  display: none;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-}
-
-.card h3 {
-  color: #222;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #444;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .tabs {
-    flex-direction: column;
-  }
+	.modal-dialog {
+		width: 95vw !important;  /* Full width on small screens */
+		height: 90vh !important;  /* Full height */
+		max-width: none;
+		max-height: none;
+	}
 
-  .tab-button {
-    flex: none;
-    width: 100%;
-  }
+	.dialog_container {
+		flex-direction: column;  /* Stack items vertically */
+		width: 100%;
+		max-height: 70vh;
+	}
+
+	.image-section {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		overflow-y: auto;
+		max-height: 50vh;  /* Ensure images stay inside */
+	}
+
+	.camera-section {
+		width: 100% !important;
+	}
+
+	.image-section img {
+		width: 180px;
+		height: 250px;
+	}
+}
+
+.modal-content {
+	overflow: auto !important; /* Allow scrolling inside the modal */
+	max-height: 90vh; /* Prevents overflow */
 }
