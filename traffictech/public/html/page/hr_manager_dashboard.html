@@ -7,28 +7,28 @@
   <!-- Tab Navigation -->
   <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#summary-attendance">Summary & Attendance</a>
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#summary-attendance" type="button" role="tab">Summary & Attendance</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#salary">Salary</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary" type="button" role="tab">Salary</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#presence-gender">Presence & Gender</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#presence-gender" type="button" role="tab">Presence & Gender</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#designation-nationality">Designation & Nationality</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#designation-nationality" type="button" role="tab">Designation & Nationality</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#documents">Documents</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab">Documents</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#payroll">Payroll</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#payroll" type="button" role="tab">Payroll</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#recruitment">Recruitment</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment" type="button" role="tab">Recruitment</button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#expenses">Expenses</a>
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#expenses" type="button" role="tab">Expenses</button>
     </li>
   </ul>
 
@@ -36,7 +36,7 @@
   <div class="tab-content pt-3">
 
     <!-- Summary & Attendance -->
-    <div class="tab-pane fade show active" id="summary-attendance">
+    <div class="tab-pane fade show active" id="summary-attendance" role="tabpanel">
       <div class="section-heading">Employee Summary</div>
       <hr>
       <div class="cards-grid">
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Salary -->
-    <div class="tab-pane fade" id="salary">
+    <div class="tab-pane fade" id="salary" role="tabpanel">
       <div class="section-heading">Salary Details</div>
       <hr>
       <div class="salary-details">
@@ -69,8 +69,8 @@
     </div>
 
     <!-- Presence & Gender -->
-    <div class="tab-pane fade" id="presence-gender">
-      <div class="presence-gender d-flex">
+    <div class="tab-pane fade" id="presence-gender" role="tabpanel">
+      <div class="d-flex presence-gender">
         <div style="width: 50%; margin-right:16px;">
           <div class="section-heading">Presence</div>
           <hr>
@@ -85,7 +85,7 @@
     </div>
 
     <!-- Designation & Nationality -->
-    <div class="tab-pane fade" id="designation-nationality">
+    <div class="tab-pane fade" id="designation-nationality" role="tabpanel">
       <div class="section-heading">Designation</div>
       <hr>
       <div class="chart-main-container" id="designation-chart"></div>
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Document Expiry -->
-    <div class="tab-pane fade" id="documents">
+    <div class="tab-pane fade" id="documents" role="tabpanel">
       <div class="document-expiry mt-2">
         <div class="section-heading">Document Expiry Details</div>
         <hr>
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Payroll -->
-    <div class="tab-pane fade" id="payroll">
+    <div class="tab-pane fade" id="payroll" role="tabpanel">
       <div class="attendance mt-2">
         <div class="section-heading">Attendance</div>
         <hr>
@@ -137,7 +137,7 @@
     </div>
 
     <!-- Recruitment -->
-    <div class="tab-pane fade" id="recruitment">
+    <div class="tab-pane fade" id="recruitment" role="tabpanel">
       <div class="recruitement">
         <div class="section-heading">Recruitment</div>
         <hr>
@@ -174,7 +174,7 @@
     </div>
 
     <!-- Expenses -->
-    <div class="tab-pane fade" id="expenses">
+    <div class="tab-pane fade" id="expenses" role="tabpanel">
       <div class="expenses mt-2">
         <div class="section-heading">Expense Claims</div>
         <hr>
