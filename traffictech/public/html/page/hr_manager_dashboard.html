@@ -10,21 +10,26 @@
   <link rel="stylesheet" href="/assets/traffictech/css/hr_manager_dashboard.css">
   <style>
     .nav-tabs {
-      border-bottom: 2px solid #444;
+      border-bottom: none;
     }
     .nav-tabs .nav-link {
       font-weight: 700;
       color: black;
-      border: 2px solid transparent;
-      border-radius: 6px 6px 0 0;
-      margin-right: 5px;
+      border: 2px solid #444;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      margin-right: 2px;
       background-color: #f9f9f9;
       transition: background 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      top: 2px;
+      z-index: 2;
     }
     .nav-tabs .nav-link.active {
       background-color: #fff217;
       color: black;
       border-color: #444 #444 #fff;
+      z-index: 3;
     }
     .nav-tabs .nav-link:hover {
       background-color: #fff6a8;
@@ -67,6 +72,9 @@
       border-radius: 0 0 10px 10px;
       border: 2px solid #444;
       border-top: none;
+      margin-top: -2px;
+      z-index: 1;
+      position: relative;
     }
   </style>
 </head>
@@ -112,7 +120,6 @@
         </div>
         <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
       </div>
-
       <div class="cards-grid mt-3">
         <div id="total-present"></div>
         <div id="total-absent"></div>
