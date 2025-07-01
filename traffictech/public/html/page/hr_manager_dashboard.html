@@ -78,6 +78,7 @@
     <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee"><i class="bi bi-people-fill"></i> Employee Summary</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance"><i class="bi bi-calendar-check"></i> Attendance</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary"><i class="bi bi-cash-stack"></i> Salary</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#payroll"><i class="bi bi-wallet2"></i> Payroll</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment"><i class="bi bi-briefcase"></i> Recruitment</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense"><i class="bi bi-receipt"></i> Expenses</button></li>
   </ul>
@@ -94,6 +95,9 @@
         <div id="exits"></div>
         <div id="joining"></div>
         <div id="relieving"></div>
+        <div id="document-expiry"></div>
+        <div id="gender-ratio"></div>
+        <div id="age-distribution"></div>
       </div>
     </div>
 
@@ -130,6 +134,18 @@
       <div class="chart-main-container" id="designation-chart"></div>
       <div class="chart-main-container" id="nationality-chart"></div>
       <div class="chart-main-container w-100 mt-2" id="monthly-salary-chart"></div>
+    </div>
+
+    <!-- Payroll Tab -->
+    <div class="tab-pane fade" id="payroll">
+      <div class="section-heading">Payroll</div>
+      <hr>
+      <div class="cards-grid">
+        <div id="payroll-processed"></div>
+        <div id="payroll-pending"></div>
+        <div id="payroll-errors"></div>
+      </div>
+      <div class="chart-main-container" id="monthly-payroll-chart"></div>
     </div>
 
     <!-- Recruitment Tab -->
