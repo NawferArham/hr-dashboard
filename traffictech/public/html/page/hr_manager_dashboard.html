@@ -1,1 +1,112 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Manager Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/assets/traffictech/css/hr_manager_dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-wrapper p-3">
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee">Employee Summary</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance">Attendance</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary">Salary</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment">Recruitment</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense">Expenses</button></li>
+  </ul>
+
+  <!-- Tabs Content -->
+  <div class="tab-content pt-3">
+    <!-- Employee Tab -->
+    <div class="tab-pane fade show active" id="employee">
+      <div class="section-heading">Employee Summary</div>
+      <hr>
+      <div class="cards-grid">
+        <div id="total-employees"></div>
+        <div id="new-hires"></div>
+        <div id="exits"></div>
+        <div id="joining"></div>
+        <div id="relieving"></div>
+      </div>
+    </div>
+
+    <!-- Attendance Tab -->
+    <div class="tab-pane fade" id="attendance">
+      <div class="section-heading">Attendance</div>
+      <hr>
+      <div class="attendance-section">
+        <div class="attendance-grid cards-grid" style="width:50%; margin-right:16px;">
+          <div id="office-staff"></div>
+          <div id="site-staff"></div>
+        </div>
+        <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
+      </div>
+      <div class="cards-grid mt-3">
+        <div id="total-present"></div>
+        <div id="total-absent"></div>
+        <div id="late-entry"></div>
+        <div id="early-exit"></div>
+      </div>
+      <div class="chart-main-container w-100 mt-2" id="attendance-count"></div>
+    </div>
+
+    <!-- Salary Tab -->
+    <div class="tab-pane fade" id="salary">
+      <div class="section-heading">Salary Details</div>
+      <hr>
+      <div class="salary-details">
+        <div class="total-salary" id="total-salary"></div>
+        <canvas class="chart-main-container" id="department-wise-salary-chart" style="margin-top: 8px;"></canvas>
+      </div>
+      <div class="section-heading">Designation & Nationality</div>
+      <div class="chart-main-container" id="designation-chart"></div>
+      <div class="chart-main-container" id="nationality-chart"></div>
+      <div class="chart-main-container w-100 mt-2" id="monthly-salary-chart"></div>
+    </div>
+
+    <!-- Recruitment Tab -->
+    <div class="tab-pane fade" id="recruitment">
+      <div class="section-heading">Recruitment</div>
+      <hr>
+      <div class="cards-grid">
+        <div id="job-openings"></div>
+        <div id="total-applicants"></div>
+        <div id="accepted-job-applicants"></div>
+        <div id="rejected-job-applicants"></div>
+        <div id="joboffers"></div>
+        <div id="applicantto-hire-percent"></div>
+        <div id="joboffer-acceptence-rate"></div>
+        <div id="time-to-fill"></div>
+      </div>
+      <div class="chart-main-container" id="job-applicant-pipeline"></div>
+      <div class="chart-main-container" id="job-applicant-source"></div>
+      <div class="chart-main-container" id="job-applicantby-country"></div>
+      <div class="chart-main-container" id="job-applicant-status"></div>
+      <div class="chart-main-container" id="job-applicant-frequency"></div>
+      <div class="chart-main-container" id="designation-wise-opening"></div>
+      <div class="chart-main-container" id="department-wise-opening"></div>
+    </div>
+
+    <!-- Expenses Tab -->
+    <div class="tab-pane fade" id="expense">
+      <div class="section-heading">Expense Claims</div>
+      <hr>
+      <div class="cards-grid">
+        <div id="expense-claims"></div>
+        <div id="approved-claims"></div>
+        <div id="rejected-claims"></div>
+      </div>
+      <div class="chart-main-container w-100 mt-2" id="departmentwise-claims-chart"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/traffictech/js/hr_manager_dashboard.js"></script>
+</body>
+</html>
