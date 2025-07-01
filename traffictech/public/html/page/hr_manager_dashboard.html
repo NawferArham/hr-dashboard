@@ -14,8 +14,7 @@
 <div class="dashboard-wrapper p-3">
   <!-- Tabs Navigation -->
   <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee">Employee Summary</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance">Attendance</button></li>
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee">Employee Details</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary">Salary</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment">Recruitment</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense">Expenses</button></li>
@@ -23,7 +22,7 @@
 
   <!-- Tabs Content -->
   <div class="tab-content pt-3">
-    <!-- Employee Tab -->
+    <!-- Employee + Attendance Tab -->
     <div class="tab-pane fade show active" id="employee">
       <div class="section-heading">Employee Summary</div>
       <hr>
@@ -34,10 +33,7 @@
         <div id="joining"></div>
         <div id="relieving"></div>
       </div>
-    </div>
 
-    <!-- Attendance Tab -->
-    <div class="tab-pane fade" id="attendance">
       <div class="section-heading">Attendance</div>
       <hr>
       <div class="attendance-section">
@@ -47,6 +43,7 @@
         </div>
         <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
       </div>
+
       <div class="cards-grid mt-3">
         <div id="total-present"></div>
         <div id="total-absent"></div>
