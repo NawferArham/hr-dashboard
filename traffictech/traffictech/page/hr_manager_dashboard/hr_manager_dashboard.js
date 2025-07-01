@@ -5,27 +5,11 @@ frappe.pages['hr-manager-dashboard'].on_page_load = function(wrapper) {
         single_column: true
     });
 
-    // Load Bootstrap CSS for tabs
-    frappe.require('/assets/frappe/node_modules/bootstrap/dist/css/bootstrap.min.css', () => {});
-
     // Inject base layout
     build_dashboard_layout(wrapper);
 
-    // Initialize tabs
-    setTimeout(() => {
-        new bootstrap.Tab(document.querySelector('#summary-tab')).show();
-    }, 500);
-
-    // Load data for the active tab
-    load_data('summary');
-
-    // Add event listener for tab changes
-    document.querySelectorAll('#dashboardTabs .nav-link').forEach(tab => {
-        tab.addEventListener('shown.bs.tab', function(event) {
-            const target = event.target.getAttribute('data-bs-target').replace('#', '');
-            load_data(target);
-        });
-    });
+    // Load all data initially
+    load_data();
 
     // load dynamic colors
     setTimeout(() => {
@@ -33,69 +17,171 @@ frappe.pages['hr-manager-dashboard'].on_page_load = function(wrapper) {
     }, 1000);
 };
 
-function load_data(tab) {
-    switch(tab) {
-        case 'summary':
-            load_stat_cards(['total-employees', 'new-hires', 'exits', 'joining', 'relieving', 'office-staff', 'site-staff']);
-            break;
-        case 'attendance':
-            load_stat_cards(['total-present', 'total-absent', 'late-entry', 'early-exit']);
-            render_employee_inout_chart();
-            render_attendance_charts();
-            break;
-        case 'salary':
-            load_stat_cards(['total-salary']);
-            render_salary_chart();
-            break;
-        case 'demographics':
-            render_outside_country_chart();
-            render_gender_ratio_chart();
-            render_designation_chart();
-            render_nationality_chart();
-            break;
-        case 'documents':
-            document_expiry_details();
-            break;
-        case 'payroll':
-            load_stat_cards(['total-declaration', 'total-salary-structure', 'total-incentive', 'total-outgoing']);
-            render_payroll_details();
-            break;
-        case 'recruitment':
-            load_stat_cards(['job-openings', 'total-applicants', 'accepted-job-applicants', 'rejected-job-applicants', 
-                           'joboffers', 'applicantto-hire-percent', 'joboffer-acceptence-rate', 'time-to-fill']);
-            render_recruitment_charts();
-            break;
-        case 'expenses':
-            load_stat_cards(['expense-claims', 'approved-claims', 'rejected-claims']);
-            render_expense_details();
-            break;
-    }
-}
+function build_dashboard_layout(wrapper) {
+    $(wrapper).find('.layout-main-section').html(`
+        <div class="dashboard-wrapper">
+            <ul class="nav nav-tabs mb-3" id="dashboardTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">Summary</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="attendance-tab" data-bs-toggle="tab" data-bs-target="#attendance" type="button" role="tab">Attendance</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="salary-tab" data-bs-toggle="tab" data-bs-target="#salary" type="button" role="tab">Salary</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="demographics-tab" data-bs-toggle="tab" data-bs-target="#demographics" type="button" role="tab">Demographics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab">Documents</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="recruitment-tab" data-bs-toggle="tab" data-bs-target="#recruitment" type="button" role="tab">Recruitment</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="expenses-tab" data-bs-toggle="tab" data-bs-target="#expenses" type="button" role="tab">Expenses</button>
+                </li>
+            </ul>
 
-// Modify the load_stat_cards function to accept specific card IDs
-function load_stat_cards(card_ids) {
-    const card_methods = {
-        'total-employees': {
-            method: "frappe.client.get_count",
-            args: { doctype: "Employee", filters: { status: "Active" } },
-            render_args: ["Total Employees", "As of Today", { doctype: "Employee", filters: { status: "Active" } }, "#198754", "bi-people-fill"]
-        },
-        // Add all other card definitions here following the same pattern
-        // ...
-    };
+            <div class="tab-content" id="dashboardTabsContent">
+                <!-- Summary Tab -->
+                <div class="tab-pane fade show active" id="summary" role="tabpanel">
+                    <div class="section-heading">Employee Summary</div>
+                    <hr>
+                    <div class="cards-grid">
+                        <div id="total-employees"></div>
+                        <div id="new-hires"></div>
+                        <div id="exits"></div>
+                        <div id="joining"></div>
+                        <div id="relieving"></div>
+                    </div>
+                </div>
 
-    card_ids.forEach(card_id => {
-        if (card_methods[card_id]) {
-            frappe.call({
-                method: card_methods[card_id].method,
-                args: card_methods[card_id].args,
-                callback: (r) => {
-                    render_stat_card(card_id, ...card_methods[card_id].render_args, r.message);
-                }
-            });
-        }
+                <!-- Attendance Tab -->
+                <div class="tab-pane fade" id="attendance" role="tabpanel">
+                    <div class="section-heading">Attendance</div>
+                    <hr>
+                    <div class="attendance-section">
+                        <div class="attendance-grid cards-grid" style="width:50%; margin-right:16px;">
+                            <div id="office-staff"></div>
+                            <div id="site-staff"></div>
+                        </div>
+                        <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
+                    </div>
+
+                    <div class="section-heading">Attendance Details</div>
+                    <hr>
+                    <div class="cards-grid">
+                        <div id="total-present"></div>
+                        <div id="total-absent"></div>
+                        <div id="late-entry"></div>
+                        <div id="early-exit"></div>
+                    </div>
+                    <div class="chart-main-container w-100 mt-2" id="attendance-count"></div>
+                </div>
+
+                <!-- Salary Tab -->
+                <div class="tab-pane fade" id="salary" role="tabpanel">
+                    <div class="section-heading">Salary Details</div>
+                    <hr>
+                    <div class="salary-details">
+                        <div class="total-salary" id="total-salary"></div>
+                        <canvas class="chart-main-container" id="department-wise-salary-chart" style="margin-top: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Demographics Tab -->
+                <div class="tab-pane fade" id="demographics" role="tabpanel">
+                    <div class="presence-gender">
+                        <div class="" style="width: 50%; margin-right:16px;">
+                            <div class="section-heading">Presence</div>
+                            <hr>
+                            <div class="chart-main-container" id="outside-country-chart"></div>
+                        </div>
+                        <div class="" style="width: 50%;">
+                            <div class="section-heading">Gender</div>
+                            <hr>
+                            <div class="chart-main-container" id="gender-ratio-chart"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-heading">Designation</div>
+                    <hr>
+                    <div class="chart-main-container" id="designation-chart"></div>
+
+                    <div class="section-heading">Nationality</div>
+                    <hr>
+                    <div class="chart-main-container" id="nationality-chart"></div>
+                </div>
+
+                <!-- Documents Tab -->
+                <div class="tab-pane fade" id="documents" role="tabpanel">
+                    <div class="section-heading">Document Expiry Details</div>
+                    <hr>
+                    <div class="cards-grid">
+                        <div id="" class="document-expiry-btn"><a href="/app/query-report/Document%20Expiry%20Details">Open Report</a></div>
+                    </div>
+                    <div class="chart-main-container w-100 mt-2" id="document-expiry-details"></div>
+                </div>
+
+                <!-- Recruitment Tab -->
+                <div class="tab-pane fade" id="recruitment" role="tabpanel">
+                    <div class="section-heading">Recruitment</div>
+                    <hr>
+                    <div class="cards-grid">
+                        <div id="job-openings"></div>
+                        <div id="total-applicants"></div>
+                        <div id="accepted-job-applicants"></div>
+                        <div id="rejected-job-applicants"></div>
+                    </div>
+                    <div class="cards-grid" style="margin-top: 10px;">
+                        <div id="joboffers"></div>
+                        <div id="applicantto-hire-percent"></div>
+                        <div id="joboffer-acceptence-rate"></div>
+                        <div id="time-to-fill"></div>
+                    </div>
+
+                    <div class="d-flex mt-2">
+                        <div class="chart-main-container w-50 mr-4" id="job-applicant-pipeline"></div>
+                        <div class="chart-main-container w-50" id="job-applicant-source"></div>
+                    </div>
+
+                    <div class="d-flex mt-2">
+                        <div class="chart-main-container w-50 mr-4" id="job-applicantby-country"></div>
+                        <div class="chart-main-container w-50" id="job-applicant-status"></div>
+                    </div>
+
+                    <div class="chart-main-container w-100 mt-2" id="job-applicant-frequency"></div>
+
+                    <div class="d-flex mt-2">
+                        <div class="chart-main-container w-50 mr-4" id="designation-wise-opening"></div>
+                        <div class="chart-main-container w-50" id="department-wise-opening"></div>
+                    </div>
+                </div>
+
+                <!-- Expenses Tab -->
+                <div class="tab-pane fade" id="expenses" role="tabpanel">
+                    <div class="section-heading">Expense Claims</div>
+                    <hr>
+                    <div class="cards-grid">
+                        <div id="expense-claims"></div>
+                        <div id="approved-claims"></div>
+                        <div id="rejected-claims"></div>
+                    </div>
+                    <div class="chart-main-container w-100 mt-2" id="departmentwise-claims-chart"></div>
+                </div>
+            </div>
+        </div>
+    `);
+
+    // Load Bootstrap JS for tabs functionality
+    frappe.require('/assets/frappe/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', () => {
+        // Initialize the first tab
+        const firstTab = new bootstrap.Tab(document.getElementById('summary-tab'));
+        firstTab.show();
     });
-}
+};
 
-// Keep all other functions the same as before
+// Keep all other existing functions exactly the same (load_data, load_stat_cards, etc.)
 // ...
