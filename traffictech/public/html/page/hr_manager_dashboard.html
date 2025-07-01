@@ -8,22 +8,83 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/assets/traffictech/css/hr_manager_dashboard.css">
+  <style>
+    .nav-tabs {
+      border-bottom: 2px solid #444;
+    }
+    .nav-tabs .nav-link {
+      font-weight: 700;
+      color: black;
+      border: 2px solid transparent;
+      border-radius: 6px 6px 0 0;
+      margin-right: 5px;
+      background-color: #f9f9f9;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #fff217;
+      color: black;
+      border-color: #444 #444 #fff;
+    }
+    .nav-tabs .nav-link:hover {
+      background-color: #fff6a8;
+      border-color: #bbb;
+    }
+    .dashboard-wrapper {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #000;
+    }
+    .section-heading::before {
+      content: '\f0da';
+      font-family: 'FontAwesome';
+      margin-right: 10px;
+      color: #fff217;
+    }
+    .tab-content > .tab-pane {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease-in-out;
+      display: block;
+      height: 0;
+      overflow: hidden;
+    }
+    .tab-content > .active {
+      opacity: 1;
+      transform: translateY(0);
+      height: auto;
+    }
+    .tab-content {
+      background-color: #ffffff;
+      padding: 16px;
+      border-radius: 0 0 10px 10px;
+      border: 2px solid #444;
+      border-top: none;
+    }
+  </style>
 </head>
 <body>
 
 <div class="dashboard-wrapper p-3">
   <!-- Tabs Navigation -->
   <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee">Employee Summary</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance">Attendance</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary">Salary</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment">Recruitment</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense">Expenses</button></li>
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee"><i class="bi bi-people-fill"></i> Employee Summary</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance"><i class="bi bi-calendar-check"></i> Attendance</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary"><i class="bi bi-cash-stack"></i> Salary</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment"><i class="bi bi-briefcase"></i> Recruitment</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense"><i class="bi bi-receipt"></i> Expenses</button></li>
   </ul>
 
   <!-- Tabs Content -->
   <div class="tab-content pt-3">
-    <!-- Employee Tab -->
+    <!-- Employee Summary Tab -->
     <div class="tab-pane fade show active" id="employee">
       <div class="section-heading">Employee Summary</div>
       <hr>
@@ -47,6 +108,7 @@
         </div>
         <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
       </div>
+
       <div class="cards-grid mt-3">
         <div id="total-present"></div>
         <div id="total-absent"></div>
