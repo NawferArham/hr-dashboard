@@ -1,197 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR Manager Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/assets/traffictech/css/hr_manager_dashboard.css">
+  <title>HR Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    .nav-tabs {
-      border-bottom: none;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
     }
-    .nav-tabs .nav-link {
-      font-weight: 700;
-      color: black;
-      border: 2px solid #444;
-      border-bottom: none;
-      border-radius: 10px 10px 0 0;
-      margin-right: 2px;
-      background-color: #f9f9f9;
-      transition: background 0.3s ease, border-color 0.3s ease;
-      position: relative;
-      top: 2px;
-      z-index: 2;
+
+    .tab-section {
+      padding: 20px;
     }
-    .nav-tabs .nav-link.active {
-      background-color: #fff217;
-      color: black;
-      border-color: #444 #444 #fff;
-      z-index: 3;
-    }
-    .nav-tabs .nav-link:hover {
-      background-color: #fff6a8;
-      border-color: #bbb;
-    }
-    .dashboard-wrapper {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    }
-    .section-heading {
+
+    .tab-title {
       display: flex;
       align-items: center;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
-    .section-heading::before {
-      content: '\f0da';
-      font-family: 'FontAwesome';
-      margin-right: 10px;
-      color: #fff217;
+
+    .tab-title i {
+      margin-right: 8px;
     }
-    .tab-content > .tab-pane {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease-in-out;
-      display: block;
-      height: 0;
-      overflow: hidden;
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
     }
-    .tab-content > .active {
-      opacity: 1;
-      transform: translateY(0);
-      height: auto;
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 160px;
     }
-    .tab-content {
-      background-color: #ffffff;
-      padding: 16px;
-      border-radius: 0 0 10px 10px;
-      border: 2px solid #444;
-      border-top: none;
-      margin-top: -2px;
-      z-index: 1;
-      position: relative;
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .card div {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .chart-card {
+      height: 300px;
     }
   </style>
 </head>
+
 <body>
 
-<div class="dashboard-wrapper p-3">
-  <!-- Tabs Navigation -->
-  <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
-    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#employee"><i class="bi bi-people-fill"></i> Employee Summary</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#attendance"><i class="bi bi-calendar-check"></i> Attendance</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#salary"><i class="bi bi-cash-stack"></i> Salary</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#payroll"><i class="bi bi-wallet2"></i> Payroll</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#recruitment"><i class="bi bi-briefcase"></i> Recruitment</button></li>
-    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#expense"><i class="bi bi-receipt"></i> Expenses</button></li>
-  </ul>
-
-  <!-- Tabs Content -->
-  <div class="tab-content pt-3">
-    <!-- Employee Summary Tab -->
-    <div class="tab-pane fade show active" id="employee">
-      <div class="section-heading">Employee Summary</div>
-      <hr>
-      <div class="cards-grid">
-        <div id="total-employees"></div>
-        <div id="new-hires"></div>
-        <div id="exits"></div>
-        <div id="joining"></div>
-        <div id="relieving"></div>
-        <div id="document-expiry"></div>
-        <div id="gender-ratio"></div>
-        <div id="age-distribution"></div>
-      </div>
-    </div>
-
-    <!-- Attendance Tab -->
-    <div class="tab-pane fade" id="attendance">
-      <div class="section-heading">Attendance</div>
-      <hr>
-      <div class="attendance-section">
-        <div class="attendance-grid cards-grid" style="width:50%; margin-right:16px;">
-          <div id="office-staff"></div>
-          <div id="site-staff"></div>
-        </div>
-        <div class="chart-main-container" id="employee-inout-chart" style="width:50%;"></div>
-      </div>
-      <div class="cards-grid mt-3">
-        <div id="total-present"></div>
-        <div id="total-absent"></div>
-        <div id="late-entry"></div>
-        <div id="early-exit"></div>
-      </div>
-      <div class="chart-main-container w-100 mt-2" id="attendance-count"></div>
-    </div>
-
-    <!-- Salary Tab -->
-    <div class="tab-pane fade" id="salary">
-      <div class="section-heading">Salary Details</div>
-      <hr>
-      <div class="salary-details">
-        <div class="total-salary" id="total-salary"></div>
-        <canvas class="chart-main-container" id="department-wise-salary-chart" style="margin-top: 8px;"></canvas>
-      </div>
-      <div class="section-heading">Designation & Nationality</div>
-      <div class="chart-main-container" id="designation-chart"></div>
-      <div class="chart-main-container" id="nationality-chart"></div>
-      <div class="chart-main-container w-100 mt-2" id="monthly-salary-chart"></div>
-    </div>
-
-    <!-- Payroll Tab -->
-    <div class="tab-pane fade" id="payroll">
-      <div class="section-heading">Payroll</div>
-      <hr>
-      <div class="cards-grid">
-        <div id="payroll-processed"></div>
-        <div id="payroll-pending"></div>
-        <div id="payroll-errors"></div>
-      </div>
-      <div class="chart-main-container" id="monthly-payroll-chart"></div>
-    </div>
-
-    <!-- Recruitment Tab -->
-    <div class="tab-pane fade" id="recruitment">
-      <div class="section-heading">Recruitment</div>
-      <hr>
-      <div class="cards-grid">
-        <div id="job-openings"></div>
-        <div id="total-applicants"></div>
-        <div id="accepted-job-applicants"></div>
-        <div id="rejected-job-applicants"></div>
-        <div id="joboffers"></div>
-        <div id="applicantto-hire-percent"></div>
-        <div id="joboffer-acceptence-rate"></div>
-        <div id="time-to-fill"></div>
-      </div>
-      <div class="chart-main-container" id="job-applicant-pipeline"></div>
-      <div class="chart-main-container" id="job-applicant-source"></div>
-      <div class="chart-main-container" id="job-applicantby-country"></div>
-      <div class="chart-main-container" id="job-applicant-status"></div>
-      <div class="chart-main-container" id="job-applicant-frequency"></div>
-      <div class="chart-main-container" id="designation-wise-opening"></div>
-      <div class="chart-main-container" id="department-wise-opening"></div>
-    </div>
-
-    <!-- Expenses Tab -->
-    <div class="tab-pane fade" id="expense">
-      <div class="section-heading">Expense Claims</div>
-      <hr>
-      <div class="cards-grid">
-        <div id="expense-claims"></div>
-        <div id="approved-claims"></div>
-        <div id="rejected-claims"></div>
-      </div>
-      <div class="chart-main-container w-100 mt-2" id="departmentwise-claims-chart"></div>
+  <div class="tab-section" id="employee-summary">
+    <div class="tab-title"><i class="fas fa-users"></i> Employee Summary</div>
+    <div class="cards-grid">
+      <div class="card" id="total-employees">Total Employees</div>
+      <div class="card" id="active-employees">Active Employees</div>
+      <div class="card" id="inactive-employees">Inactive Employees</div>
+      <div class="card" id="new-employees">New Employees</div>
     </div>
   </div>
-</div>
 
-<script src="/assets/traffictech/js/hr_manager_dashboard.js"></script>
+  <div class="tab-section" id="attendance">
+    <div class="tab-title"><i class="fas fa-calendar-check"></i> Attendance</div>
+    <div class="cards-grid">
+      <div class="card chart-card" id="employee-inout-chart">Employee In/Out Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="salary">
+    <div class="tab-title"><i class="fas fa-money-bill"></i> Salary Details</div>
+    <div class="cards-grid">
+      <div class="card chart-card" id="monthly-salary-chart">Monthly Salary Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="presence-gender">
+    <div class="tab-title"><i class="fas fa-user-friends"></i> Presence & Gender</div>
+    <div class="cards-grid">
+      <div class="card chart-card" id="presence-chart">Presence Chart</div>
+      <div class="card chart-card" id="gender-chart">Gender Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="designation-nationality">
+    <div class="tab-title"><i class="fas fa-briefcase"></i> Designation & Nationality</div>
+    <div class="cards-grid">
+      <div class="card chart-card" id="designation-chart">Designation Chart</div>
+      <div class="card chart-card" id="nationality-chart">Nationality Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="document-expiry">
+    <div class="tab-title"><i class="fas fa-id-card"></i> Document Expiry</div>
+    <div class="cards-grid">
+      <div class="card chart-card" id="document-expiry-chart">Document Expiry Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="payroll">
+    <div class="tab-title"><i class="fas fa-file-invoice-dollar"></i> Payroll</div>
+    <div class="cards-grid">
+      <div class="card" id="total-payroll">Total Payroll</div>
+      <div class="card" id="payroll-status">Payroll Status</div>
+      <div class="card chart-card" id="payroll-summary">Payroll Summary Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="recruitment">
+    <div class="tab-title"><i class="fas fa-user-plus"></i> Recruitment</div>
+    <div class="cards-grid">
+      <div class="card" id="open-positions">Open Positions</div>
+      <div class="card" id="applications">Applications</div>
+      <div class="card chart-card" id="recruitment-status-chart">Recruitment Status Chart</div>
+    </div>
+  </div>
+
+  <div class="tab-section" id="expense-claims">
+    <div class="tab-title"><i class="fas fa-receipt"></i> Expense Claims</div>
+    <div class="cards-grid">
+      <div class="card" id="approved-claims">Approved Claims</div>
+      <div class="card" id="pending-claims">Pending Claims</div>
+      <div class="card chart-card" id="expense-claim-chart">Expense Claim Chart</div>
+    </div>
+  </div>
+
 </body>
+
 </html>
